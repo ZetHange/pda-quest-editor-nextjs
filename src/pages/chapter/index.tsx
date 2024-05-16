@@ -51,7 +51,7 @@ const Story = () => {
         <Box h="calc(100vh - 73px)" px={2} overflowY="auto">
           <Box overflowY="auto">
             <Text my={2}>История {storyId}</Text>
-            <SimpleGrid columns={5} spacing={2}>
+            <SimpleGrid columns={1} spacing={2}>
               {chapters.map((chapter: ChapterType) => (
                 <ChapterCard
                   key={chapter.id}

@@ -28,7 +28,7 @@ const Window: FC<WindowProps> = ({
     height: height,
   });
   const [isMouseDown, setIsMouseDown] = useState(false);
-  const [isResize, setIsResize] = useState(false);
+  const [isResizing, setIsResizing] = useState(false);
   const okno = useRef<HTMLDivElement>(null);
   const [startPos, setStartPos] = useState<[number, number]>([0, 0]);
 
@@ -40,8 +40,13 @@ const Window: FC<WindowProps> = ({
           x: event.clientX - startPos[0],
           y: event.clientY - startPos[1] - top,
         }));
-      } else if (isResize) {
+      } else if (isResizing) {
         const rect = okno.current?.getBoundingClientRect()!;
+        console.log(
+          rect,
+          `${event.clientX - rect.x + 10}px`,
+          `${event.clientY - rect.y + 10}px`
+        );
         okno.current!.style.width = `${event.clientX - rect.x + 10}px`;
         okno.current!.style.height = `${event.clientY - rect.y + 10}px`;
       }
@@ -52,7 +57,7 @@ const Window: FC<WindowProps> = ({
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
     };
-  }, [isMouseDown, isResize]);
+  }, [isMouseDown, isResizing]);
 
   const handleMouseDown = (e: MouseEvent) => {
     const rect = okno.current?.getBoundingClientRect()!;
@@ -75,7 +80,7 @@ const Window: FC<WindowProps> = ({
         resize: "both",
       }}
       width={position.width}
-      minHeight={position.height}
+      height={position.height}
       rounded="md"
       zIndex={100}
       bg="white"
@@ -120,10 +125,10 @@ const Window: FC<WindowProps> = ({
         height={10}
         zIndex={101}
         onMouseDown={() => {
-          setIsResize(true);
+          setIsResizing(true);
         }}
         onMouseUp={() => {
-          setIsResize(false);
+          setIsResizing(false);
         }}
       ></Box>
     </Box>
