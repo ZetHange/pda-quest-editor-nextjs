@@ -3,7 +3,6 @@ import ChangeThemeButton from "@/components/UI/NavBar/ChangeThemeButton";
 import NavBar from "@/components/UI/NavBar/NavBar";
 import { useChapterStore } from "@/entities/chapter";
 import { CreateChapterButton, ImportFromJsonButton } from "@/features/chapter";
-import { ShareStoryButton } from "@/features/cooperative";
 import { logger } from "@/shared/lib/logger.ts";
 import { ChapterType } from "@/shared/lib/type/chapter.type";
 import { ChapterCard } from "@/widgets/chapter-card";
@@ -45,7 +44,6 @@ const Story = () => {
           <CreateChapterButton />
           <ImportFromJsonButton />
           <Spacer />
-          <ShareStoryButton />
           <ChangeThemeButton rounded={true} />
         </NavBar>
         <Box h="calc(100vh - 73px)" px={2} overflowY="auto">

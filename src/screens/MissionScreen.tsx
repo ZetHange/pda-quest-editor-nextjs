@@ -11,6 +11,7 @@ import { useAppSelector } from "@/store/reduxStore/reduxHooks";
 interface Props {}
 
 const MissionScreen: React.FC<Props> = () => {
+  // @ts-ignore
   const storeRedux: Store<RootState> = useStore();
   const isOpen = useAppSelector((state) => state.mission.targetMission.isOpen);
 

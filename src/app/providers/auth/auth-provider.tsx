@@ -1,4 +1,3 @@
-import { useCoopStore } from "@/entities/cooperative";
 import { useUserStore } from "@/entities/user";
 import { API_URL } from "@/shared/config";
 import { logger } from "@/shared/lib/logger";
@@ -28,7 +27,6 @@ const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
   const { setUser } = useUserStore();
-  const { send } = useCoopStore();
   const toast = useToast();
 
   useEffect(() => {
@@ -47,12 +45,6 @@ const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
         const data = (await res.json()) as IUser;
         logger.success("Logged in:", data);
         setUser(data);
-        send({
-          type: "LOGIN",
-          login: {
-            login: data.login,
-          },
-        });
       }
     })(url);
   }, []);

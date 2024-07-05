@@ -105,6 +105,8 @@ export default function StageEditScreen({
   const reactFlowWrapper = useRef<HTMLDivElement>(null);
   const [reactFlowInstance, setReactFlowInstance] =
     useState<ReactFlowInstance>();
+
+  // @ts-ignore
   const storeRedux: Store<RootState> = useStore();
 
   const {

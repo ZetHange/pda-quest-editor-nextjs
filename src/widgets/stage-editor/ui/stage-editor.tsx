@@ -39,7 +39,7 @@ const StageEditor: FC = () => {
   const size = useMemo(() => {
     return {
       width: stage?.type_stage === 4 ? 800 : 400,
-      height: 850,
+      height: document.body.clientHeight - 100,
     };
   }, [stage]);
 

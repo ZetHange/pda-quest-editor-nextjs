@@ -1,4 +1,5 @@
 import { create } from "zustand";
+
 import { StageTransferType, StageType } from "@/shared/lib/type/chapter.type";
 import { PointType } from "@/shared/lib/type/map.type";
 
@@ -54,9 +55,7 @@ export const useStageStore = create<IStageStore>((set) => ({
       },
     }));
   },
-  setTransfer: (transfer: IStageTransfer) => {
-    return set({ transfer });
-  },
+  setTransfer: (transfer: IStageTransfer) => set({ transfer }),
 
-  reset: () => set({ stage: undefined, point: undefined }),
+  reset: () => set({ stage: undefined, point: undefined, transfer: undefined }),
 }));

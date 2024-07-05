@@ -16,7 +16,6 @@ import {
 } from "@/features/story";
 import { StoryType } from "@/shared/lib/type/story.type";
 import ExportToServer from "@/features/story/export-to-server/ui/export-to-server.tsx";
-import { SharedStoriesDrawer } from "@/features/cooperative/get-shared-stories";
 import {
   Box,
   Button,
@@ -102,7 +101,6 @@ const Home = () => {
           <ImportFromZipButton />
           <Spacer />
           <ChangeThemeButton rounded={true} />
-          <SharedStoriesDrawer />
           <ImportFromServerButton />
           <Button
             fontWeight="normal"
