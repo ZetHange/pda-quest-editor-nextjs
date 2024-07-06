@@ -18,6 +18,10 @@ const AutocompleteInput: FC<AutocompleteInputProps> = ({
     <Box position="relative" w="100%">
       <Input
         bg="white"
+        _dark={{
+          bg: "gray.700",
+          color: "gray.200",
+        }}
         value={value}
         onChange={({ target: { value } }) => onChange(value)}
         onFocus={() => setShow(true)}

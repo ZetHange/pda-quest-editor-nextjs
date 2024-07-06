@@ -25,7 +25,7 @@ import { TransferStageEditor } from "@/widgets/transfer-stage";
 
 const nodeTypes = { stage: StageNode };
 
-const ChapterEditor = () => {
+export const ChapterEditor = () => {
   const {
     setChapterId,
     setStoryId,
@@ -345,10 +345,12 @@ const ChapterEditor = () => {
           gap={1}
           p={1}
         >
-          <Box>
+          <Box display="flex" gap={1} alignItems="center">
             <Link to={`/edit/story/${storyId}`}>
               <Button size="sm">Назад</Button>
             </Link>
+            <Link to={`/edit/story/${storyId}/maps/?prev_url=${location.pathname}`}>
+            <Button size="sm">Карты</Button></Link>
           </Box>
           <Box>
             <ChangeThemeButton rounded={true} size="sm" />
@@ -400,5 +402,3 @@ const ChapterEditor = () => {
     </>
   );
 };
-
-export default ChapterEditor;

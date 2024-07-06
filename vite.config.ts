@@ -1,4 +1,4 @@
-import { defineConfig, PluginOption, splitVendorChunkPlugin } from "vite";
+import { defineConfig, PluginOption } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import { resolve } from "path";
 import { visualizer } from "rollup-plugin-visualizer";
@@ -9,12 +9,14 @@ const root = resolve(__dirname, "src");
 export default defineConfig({
   plugins: [
     react(),
-    splitVendorChunkPlugin(),
     visualizer({
       emitFile: true,
       filename: "stats.html",
     }) as PluginOption,
   ],
+  server: {
+    port: 3000,
+  },
   resolve: {
     alias: {
       "@": resolve(root),

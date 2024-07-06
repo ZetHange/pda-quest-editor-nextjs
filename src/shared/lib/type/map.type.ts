@@ -1,7 +1,7 @@
 import { ConditionType } from "./chapter.type";
 
 export type MapType = {
-  id: string;
+  id: number;
   title: string;
   tmx: string;
   background?: string;

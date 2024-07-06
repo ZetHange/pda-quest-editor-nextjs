@@ -10,7 +10,7 @@ import { Box, Button, SimpleGrid, Spacer, Text } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-const Story = () => {
+export const StoryEditor = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { chapters, setChapters, setStoryId, storyId } = useChapterStore();
@@ -74,4 +74,3 @@ const Story = () => {
   );
 };
 
-export default Story;

@@ -59,7 +59,7 @@ export interface StoryFromServer {
   hashcode: number;
 }
 
-const Home = () => {
+export const StoriesEditor = () => {
   const { stories, setStories, setEditStory, setUploadConfig } =
     useStoryStore();
   const { downloadStoryAsZip } = useStoryService();
@@ -188,5 +188,3 @@ const Home = () => {
     </>
   );
 };
-
-export default Home;

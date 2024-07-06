@@ -26,6 +26,7 @@ export const useStoryStore = create<IStoryStore>((set) => ({
       editStory: { ...state.editStory, ...(story as Required<typeof story>) },
     }));
   },
+  
   // todo
   uploadConfig: {
     id: 0,

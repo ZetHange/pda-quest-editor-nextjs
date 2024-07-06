@@ -93,6 +93,9 @@ const ConditionEditorModal: FC<ConditionEditorModalProps> = ({
             border="1px"
             gap={2}
             borderColor="gray.100"
+            _dark={{
+              borderColor: "gray.700",
+            }}
             rounded="md"
             mt={1}
           >
@@ -130,7 +133,9 @@ const ConditionEditorModal: FC<ConditionEditorModalProps> = ({
         )}
 
         {Object.entries(cond).map(([operator, values]) => (
-          <Box key={operator} p={2} mt={1} bg="gray.100" rounded="md">
+          <Box key={operator} p={2} mt={1} bg="gray.100" rounded="md" _dark={{
+            bg: "gray.700",
+          }}>
             <Flex gap={1}>
               <Text>{keys[operator]}</Text>
               <Spacer />
